@@ -108,16 +108,16 @@ data/*.csv + rm_notes.json   (12 institutional source files, immutable)
    src/ingest.py             loads everything into an in-memory DataStore
         │
         ▼
-┌─── src/engine/ ─────────────────────────────────────────────────┐
-│  DETERMINISTIC ENGINES. No LLM. Returns findings, never prose.   │
-│                                                                 │
-│  attribution.py   exact trading + price + FX decomposition      │
-│  mandate.py       allocation-band & single-position breaches    │
-│  concentration.py cross-portfolio look-through concentration    │
-│  collateral.py    loan-to-value trajectory vs. margin call      │
-│  liquidity.py     commitments & cash needs vs. what's sellable  │
-│  ground.py        links moves to event_log.csv taxonomy         │
-└─────────────────────────────────────────────────────────────────┘
+┌─── src/engine/ ────────────────────────────────────────────────────────────┐
+│  DETERMINISTIC ENGINES. No LLM. Returns findings, never prose.             │
+│                                                                            │
+│  attribution.py    exact trading + price + FX decomposition                │
+│  mandate.py        allocation-band & single-position breaches              │
+│  concentration.py  cross-portfolio look-through concentration              │
+│  collateral.py     loan-to-value trajectory vs. margin call                │
+│  liquidity.py      commitments & cash needs vs. what's sellable            │
+│  ground.py         links moves to event_log.csv taxonomy                   │
+└────────────────────────────────────────────────────────────────────────────┘
         │
         ▼
    src/schema.py              the Insight contract (structured schema)
@@ -125,12 +125,12 @@ data/*.csv + rm_notes.json   (12 institutional source files, immutable)
    src/engine/prioritise.py   computes explainable urgency score across book
         │
         ▼
-┌─── src/engine/narrate/ ──────────────────────────────────────────┐
-│  template.py        deterministic prose from Insight. Zero external deps.│
-│  __init__.py        narrate(): template or GPT-4o with strict guardrails │
-│  chat.py            "Ask Why": tool-calling loop closed over client_id  │
-│  market_context.py  QUARANTINED live web search for external press color │
-└───────────────────────────────────────────────────────────────────┘
+┌─── src/engine/narrate/ ────────────────────────────────────────────────────┐
+│  template.py        deterministic prose from Insight. Zero external deps.  │
+│  __init__.py        narrate(): template or GPT-4o with strict guardrails   │
+│  chat.py            "Ask Why": tool-calling loop closed over client_id     │
+│  market_context.py  QUARANTINED live web search for external press color   │
+└────────────────────────────────────────────────────────────────────────────┘
         │
         ▼
    api/main.py     FastAPI JSON layer  ──►  frontend/index.html
