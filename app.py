@@ -627,7 +627,7 @@ def main_page():
         # =========================================================================
         # Column 2: Center Panel (Client Insights View)
         # =========================================================================
-        main_container = ui.column().classes("flex-grow h-screen overflow-y-auto p-[26px_34px] max-w-[860px] bg-[#f5f7fa]")
+        main_container = ui.column().classes("flex-grow h-screen overflow-y-auto p-[26px_26px] max-w-[860px] bg-[#f5f7fa]")
 
         # =========================================================================
         # Column 3: Right Rail (RM Decision Log & Meeting Prep)
@@ -750,14 +750,12 @@ def main_page():
             # 1. Desk & Book Overview Header Banner
             ui.html(f"""
             <div class="border-b border-[#e2e8f0] pb-3 mb-4 w-full">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h2 class="serif-font text-[22px] font-bold text-[#0c2340] m-0 leading-tight">Desk & Book Overview</h2>
-                  <div class="text-[#5a6d85] text-[12.5px] mt-1">
-                    Whole-book exposure across {client_count} private client relationships · Priscilla Ong (Asia Desk) · 26 Aug 2026
-                  </div>
-                </div>
-                <span class="text-[11px] uppercase tracking-wider font-semibold text-[#15803d] bg-[#f0fdf4] px-2.5 py-1 rounded-full border border-[#bbf7d0]">Live Book Status</span>
+              <div class="flex justify-between items-center mb-1 gap-3 flex-nowrap">
+                <h2 class="serif-font text-[22px] font-bold text-[#0c2340] m-0 leading-tight min-w-0">Desk & Book Overview</h2>
+                <span class="shrink-0 whitespace-nowrap text-[11px] uppercase tracking-wider font-semibold text-[#15803d] bg-[#f0fdf4] px-2.5 py-1 rounded-full border border-[#bbf7d0]">Live Book Status</span>
+              </div>
+              <div class="text-[#5a6d85] text-[11.5px] mt-0.5">
+                Whole-book exposure across {client_count} private client relationships · Priscilla Ong (Asia Desk) · 26 Aug 2026
               </div>
             </div>
             """).classes("w-full")
@@ -832,13 +830,11 @@ def main_page():
 
                 ui.html(f"""
                 <div class="ana-card w-full">
-                  <div class="flex justify-between items-center mb-2.5">
-                    <div>
-                      <h3 class="serif-font text-[16px] font-bold text-[#0c2340] m-0">Asset Class Allocation — {client_name}</h3>
-                      <div class="text-[11.5px] text-[#5a6d85] mt-0.5">Portfolio exposure for {client_name} ({cid}) · Total ${total_client_mv:,.0f} USD</div>
-                    </div>
-                    <span class="text-[11px] font-semibold text-[#1f71ac] bg-[#eaf2f8] px-2.5 py-0.5 rounded border border-[#d2e3f2]">100% Capital Accounted</span>
+                  <div class="flex justify-between items-center mb-1 gap-3 flex-nowrap">
+                    <h3 class="serif-font text-[16px] font-bold text-[#0c2340] m-0 min-w-0">Asset Class Allocation — {client_name}</h3>
+                    <span class="shrink-0 whitespace-nowrap text-[11px] font-semibold text-[#1f71ac] bg-[#eaf2f8] px-2.5 py-0.5 rounded border border-[#d2e3f2]">100% Capital Accounted</span>
                   </div>
+                  <div class="text-[11px] text-[#5a6d85] mt-0.5 mb-3">Portfolio exposure for {client_name} ({cid}) · Total ${total_client_mv:,.0f} USD</div>
                   
                   <div class="w-full h-3.5 rounded-full overflow-hidden flex flex-nowrap mb-3.5 bg-[#e2e8f0]">
                     {bar_segments}
@@ -931,14 +927,14 @@ def main_page():
 
                 header_html = f"""
                 <div class="border-b border-[#e2e8f0] pb-4 mb-2 w-full">
-                  <div class="flex justify-between items-start">
-                    <div>
+                  <div class="flex justify-between items-start gap-3 flex-nowrap">
+                    <div class="min-w-0 flex-1">
                       <h2 class="serif-font text-[24px] font-bold text-[#0c2340] m-0 leading-tight">{name}</h2>
                       <div class="text-[#5a6d85] text-[13px] mt-1">
                         {cid} · {age_part}{risk} mandate · {curr} · AUM {aum_str} USD
                       </div>
                     </div>
-                    <span class="text-[11px] uppercase tracking-wider font-semibold text-[#1f71ac] bg-[#eaf2f8] px-2.5 py-1 rounded-full border border-[#d2e3f2]">Julius Bär Mandate</span>
+                    <span class="shrink-0 whitespace-nowrap text-[11px] uppercase tracking-wider font-semibold text-[#1f71ac] bg-[#eaf2f8] px-2.5 py-1 rounded-full border border-[#d2e3f2]">Julius Bär Mandate</span>
                   </div>
                   <div class="text-[#0c2340] bg-[#eaf2f8] border-l-4 border-[#1f71ac] p-[9px_13px] rounded-r-md text-[12.5px] mt-3 leading-normal font-medium">
                     <span class="text-[10.5px] uppercase tracking-[0.7px] text-[#1f71ac] font-bold block mb-0.5">Mandate Objective</span>
