@@ -2,6 +2,9 @@
 
 > **An auditable, deterministic intelligence platform for Private Banking Relationship Managers that turns complex portfolio movements, mandate breaches, and market shocks into defensible, client-ready actions.**
 
+🌐 **Live Interactive Workbench:** [https://janus-wealth-intelligence.onrender.com](https://janus-wealth-intelligence.onrender.com)  
+*(Hosted live on Render — please allow ~30 seconds to wake up on initial cold start)*
+
 *Originally created for the Julius Baer Wealth Intelligence Challenge (SingHacks 2026).*
 
 ---
@@ -47,7 +50,9 @@ An LLM (`gpt-4o`) is used solely downstream of that computation to transform alr
 
 ## Quickstart
 
-### 1. Installation
+> 💡 **Try it live:** Explore the full interactive workbench directly in your browser at [https://janus-wealth-intelligence.onrender.com](https://janus-wealth-intelligence.onrender.com) without any local setup.
+
+### 1. Local Installation
 
 ```bash
 git clone https://github.com/delwinvanstrien/janus-wealth-intelligence.git
