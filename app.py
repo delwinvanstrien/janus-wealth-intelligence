@@ -881,23 +881,23 @@ def main_page():
                 is_analytics = (active_center_tab["tab"] == "ANALYTICS")
 
                 with ui.row().classes("w-full justify-between items-center border-b border-[#e2e8f0] pb-3 mb-4 no-wrap"):
-                    with ui.row().classes("bg-[#e2e8f0] p-1 rounded-lg gap-1 items-center"):
+                    with ui.row().classes("bg-[#e2e8f0] p-0.5 rounded-md gap-1 items-center no-wrap"):
                         if is_insights:
                             tab_ins = ui.button("Client Insights & Decisions").props("no-caps unelevated dense").classes(
-                                "px-3.5 py-1.5 rounded-md text-[12px] font-bold bg-[#0c2340] text-white shadow-sm"
+                                "px-2.5 py-1 rounded text-[11px] font-bold bg-[#0c2340] text-white shadow-sm"
                             )
                         else:
                             tab_ins = ui.button("Client Insights & Decisions").props("no-caps unelevated dense").classes(
-                                "px-3.5 py-1.5 rounded-md text-[12px] font-semibold bg-white border border-[#cbd5e1] hover:bg-[#f8fafc]"
+                                "px-2.5 py-1 rounded text-[11px] font-semibold bg-white border border-[#cbd5e1] hover:bg-[#f8fafc]"
                             ).style("color: #0c2340 !important;")
 
                         if is_analytics:
                             tab_ana = ui.button("Desk & Portfolio Analytics").props("no-caps unelevated dense").classes(
-                                "px-3.5 py-1.5 rounded-md text-[12px] font-bold bg-[#0c2340] text-white shadow-sm"
+                                "px-2.5 py-1 rounded text-[11px] font-bold bg-[#0c2340] text-white shadow-sm"
                             )
                         else:
                             tab_ana = ui.button("Desk & Portfolio Analytics").props("no-caps unelevated dense").classes(
-                                "px-3.5 py-1.5 rounded-md text-[12px] font-semibold bg-white border border-[#cbd5e1] hover:bg-[#f8fafc]"
+                                "px-2.5 py-1 rounded text-[11px] font-semibold bg-white border border-[#cbd5e1] hover:bg-[#f8fafc]"
                             ).style("color: #0c2340 !important;")
 
                         def switch_to_ins():
