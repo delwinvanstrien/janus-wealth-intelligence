@@ -1252,6 +1252,17 @@ def find_available_port(preferred_ports=(8080, 8000, 8081, 8888)) -> int:
 
 
 if __name__ in {"__main__", "__mp_main__"}:
-    port = find_available_port([8080, 8000, 8081])
-    print(f"\n🚀 Launching RM Intelligence Workbench on http://localhost:{port} ...")
-    ui.run(title="Janus | Julius Bär — Wealth Intelligence", port=port, reload=False, show=True)
+    # In cloud environments (Render, etc.), PORT is assigned via environment variable
+    is_cloud = bool(os.environ.get("RENDER") or os.environ.get("PORT"))
+    port = int(os.environ["PORT"]) if "PORT" in os.environ else find_available_port([8080, 8000, 8081])
+    host = "0.0.0.0" if is_cloud else "127.0.0.1"
+
+    print(f"\n🚀 Launching RM Intelligence Workbench on http://{host}:{port} ...")
+    ui.run(
+        title="Janus | Julius Bär — Wealth Intelligence",
+        host=host,
+        port=port,
+        reload=False,
+        show=not is_cloud,
+    )
+
